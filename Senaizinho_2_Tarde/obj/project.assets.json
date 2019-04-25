@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\Senaizinho_2_Tarde\\Senaizinho_2_Tarde.csproj",
+      "projectUniqueName": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\Senaizinho_2_Tarde\\Senaizinho_2_Tarde.csproj",
       "projectName": "Senaizinho_2_Tarde",
-      "projectPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\Senaizinho_2_Tarde\\Senaizinho_2_Tarde.csproj",
+      "projectPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\Senaizinho_2_Tarde\\Senaizinho_2_Tarde.csproj",
       "packagesPath": "C:\\Users\\47425337800\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\Senaizinho_2_Tarde\\obj\\",
+      "outputPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\Senaizinho_2_Tarde\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

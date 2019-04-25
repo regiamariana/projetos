@@ -43,19 +43,19 @@ namespace Senaizinho_2_Tarde {
     Aluno aluno = new Aluno ();
 
     System.Console.WriteLine ("Digite o nome do aluno");
-    aluno.nome = Console.ReadLine ();
+    aluno.Nome = Console.ReadLine ();
 
     System.Console.WriteLine ("Digite a data de nascimento (dd/mm/aaaa)");
-    aluno.dataNascimento = DateTime.Parse (Console.ReadLine ());
+    aluno.DataNascimento = DateTime.Parse (Console.ReadLine ());
 
     System.Console.WriteLine ("Digite o nome do curso");
-    aluno.curso = Console.ReadLine ();
+    aluno.Curso = Console.ReadLine ();
 
     alunos[alunosCadastrados] = aluno;
 
     alunosCadastrados++;
 
-    MostrarMensagem ($"Cadastro de {aluno.GetType().Name} feito com sucesso!", TipoMensagemEnum.SUCESSO);
+    MostrarMensagem ($"Cadastro de {aluno.GetType().Nome} feito com sucesso!", TipoMensagemEnum.SUCESSO);
     } else {
     MostrarMensagem ($"Total de alunos foi excedido!", TipoMensagemEnum.ALERTA);
                         }
@@ -65,17 +65,18 @@ namespace Senaizinho_2_Tarde {
                     case 2:
                         #region cadastrar_salas 
                         if (limiteSalas != salasCadastradas) {
-                            Sala sala = new Sala ();
 
                             System.Console.WriteLine ("Digite o número da sala");
-                            sala.numeroSala = int.Parse (Console.ReadLine ());
+                            sala.NumeroSala = int.Parse (Console.ReadLine ());
 
                             System.Console.WriteLine ("Digite a capacidade total");
-                            sala.capacidadeTotal = int.Parse (Console.ReadLine ());
+                            sala.CapacidadeTotal = int.Parse (Console.ReadLine ());
 
-                            sala.capacidadeAtual = sala.capacidadeTotal;
+                            Sala sala = new Sala (numeroSalaCadastrar , CapacidadeTotalCadastrar);
 
-                            sala.alunos = new string[sala.capacidadeTotal];
+                            sala.CapacidadeAtual = sala.CapacidadeTotal;
+
+                            sala.Alunos = new string[sala.CapacidadeTotal];
 
                             salas[salasCadastradas] = sala;
 
@@ -270,7 +271,7 @@ namespace Senaizinho_2_Tarde {
 
         static Aluno ProcurarAlunoPorNome (string nomeAluno, Aluno[] alunos) {
             foreach (Aluno item in alunos) {
-                if (item != null && nomeAluno.Equals (item.nome)) {
+                if (item != null && nomeAluno.Equals (item.Nome)) {
                     return item;
 
                 }
@@ -278,6 +279,5 @@ namespace Senaizinho_2_Tarde {
             return null;
         }
 
-        static 
     }
 }

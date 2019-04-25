@@ -1,32 +1,36 @@
 namespace Senaizinho_2_Tarde {
     public class Sala {
-        public int numeroSala;
-        public int capacidadeAtual;
-        public int capacidadeTotal;
-        public string[] alunos;
+        public int NumeroSala {get; private set;}
+        public int CapacidadeAtual{get; set;}
+        public int CapacidadeTotal{get; set;}
+        public Aluno[] Alunos{get; set;}
 
-        public string AlocarAluno (string nomeAluno) {
-            if (capacidadeAtual > 0) {
-                capacidadeAtual--;
+        public string AlocarAluno (string NomeAluno) {
+            if (CapacidadeAtual > 0) {
+                CapacidadeAtual--;
                 for (int i = 0; i < alunos.Length; i++) {
-                    if (alunos[i] == null || "".Equals(alunos[i])) 
+                    if (alunos[i] == null) 
                     {
-                        alunos[i] = nomeAluno;
-                        return $"Aluno {nomeAluno} alocado com sucesso!";
+                        alunos[i] = NomeAluno;
+                        return $"Aluno {NomeAluno} alocado com sucesso!";
                     }    
                 }
             } else {
-                return $"Capacidade da sala {numeroSala} excedida!";
+                return $"Capacidade da sala {NumeroSala} excedida!";
             }
             return "Não foi possível cadastrar";
         }
-
-        public string RemoverAluno (string nomeAluno) {
+                public Sala(int numeroSala, int CapacidadeTotal){
+                        this.NumeroSala = NumeroSala;
+                        this.CapacidadeAtual = CapacidadeAtual;
+                        this.CapacidadeTotal = CapacidadeTotal;
+                }
+        public string RemoverAluno (string nomeAluno, out string mensagem ) {
             for (int i = 0; i < alunos.Length; i++) {
                 if (alunos[i] != null && nomeAluno.Equals (alunos[i])) {
-                    alunos[i] = "";
+                    alunos[i] = null;
                     capacidadeAtual++;
-                    return $"Aluno {nomeAluno} removido com sucesso!";
+                    mensagem = $"Aluno {nomeAluno} removido com sucesso!";
                 }
             }
             return $"{nomeAluno} não foi encontrado";
