@@ -5,17 +5,6 @@ namespace Senaizinho_2_Tarde
 {
     class Program
     {
-        enum MenuEnum : uint {
-            CADASTRAR_ALUNO,
-
-            CADASTRAR_SALA,
-
-            LISTAR_ALUNOS,
-
-            LISTAR_SALAS,
-
-            REMOVER_ALUNO
-        }
         static void Main (string[] args) {
             int limiteAlunos = 3;
             int limiteSalas = 2;
@@ -30,46 +19,21 @@ namespace Senaizinho_2_Tarde
             do {
                 Console.Clear ();
                 #region MENU
-                //header
-                string[] itensMenu = Enum.GetNames(typeof(MenuEnum));
-
-                string barraMenu = "=====================================";
-                System.Console.WriteLine(barraMenu);
-            
+                System.Console.WriteLine ("===================================");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 System.Console.WriteLine ("        *** SENAIzinho ***         ");
                 Console.ResetColor ();
                 System.Console.WriteLine ("         Seja bem-vindo(a)         ");
-                System.Console.WriteLine (barraMenu);
+                System.Console.WriteLine ("===================================");
                 System.Console.WriteLine ("|| Digite sua opção:             ||");
-               //BODY
-                for (int i = 0; i < itensMenu.Length; i++) {
-                    string espacosFim = "";
-                    string bordaLinha = "||";
-                    string paragrafoInicio = "   ";
-                    string separadorOpcao = " - ";
-
-                    string nomeTratado = itensMenu[i].Replace ("_", " ").ToLower ();
-                    nomeTratado = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase (nomeTratado);
-                    int espacoDezena = i / 10;
-                    
-                    string numeroOpcao = (i + 1).ToString();
-
-                    if (espacoDezena < 1) {
-                        paragrafoInicio = paragrafoInicio + " ";
-                    }
-
-                    int qntdeEspacos = barraMenu.Length - (bordaLinha.Length * 2) - paragrafoInicio.Length - numeroOpcao.Length - separadorOpcao.Length - nomeTratado.Length;
-
-                    for (int j = 0; j < qntdeEspacos; j++) {
-                        espacosFim += " ";
-                    }
-                    
-                    System.Console.WriteLine ($"{bordaLinha}{paragrafoInicio}{numeroOpcao}{separadorOpcao}{nomeTratado}{espacosFim}{bordaLinha}");
-                }
-               //FOOTER
+                System.Console.WriteLine ("||  1 - Cadastrar Aluno          ||");
+                System.Console.WriteLine ("||  2 - Cadastrar Sala           ||");
+                System.Console.WriteLine ("||  3 - Alocar Aluno             ||");
+                System.Console.WriteLine ("||  4 - Remover Aluno            ||");
+                System.Console.WriteLine ("||  5 - Listar Salas             ||");
+                System.Console.WriteLine ("||  6 - Listar Alunos            ||");
                 System.Console.WriteLine ("||  0 - Sair                     ||");
-                System.Console.WriteLine (barraMenu);
+                System.Console.WriteLine ("===================================");
                 #endregion
 
                 System.Console.Write ("Código: ");
@@ -89,8 +53,8 @@ namespace Senaizinho_2_Tarde
                         System.Console.WriteLine ("Digite a data de nascimento (dd/mm/aaaa)");
                         aluno.DataNascimento = DateTime.Parse (Console.ReadLine ());
 
-                        
-                        aluno.Curso = ExibirMenuCursos();
+                        System.Console.WriteLine ("Digite o nome do curso");
+                        aluno.Curso = Console.ReadLine ();
 
                         alunos[alunosCadastrados] = aluno;
 
@@ -293,39 +257,5 @@ namespace Senaizinho_2_Tarde
         }
     
     
-        static string ExibirMenuCursos()
-        {
-                string curso = "";
-
-                bool cursoNaoEscolhido = true;
-                do
-                {
-                    
-                } while (cursoNaoEscolhido);
-                       Console.WriteLine ("=================================");
-                       Console.WriteLine ("#        Digite sua opção:      #");
-                       Console.WriteLine ("#       1 - DESENVOLVIMENTO     #");
-                       Console.WriteLine ("#       2 - REDES               #");
-                       Console.WriteLine ("=================================");
-
-                int codigoDoCurso = int.Parse(Console.ReadLine());
-
-                switch(codigoDoCurso){
-                    case 1:
-                    curso = "DESENVOLVIMENTO";
-                    cursoNaoEscolhido = false;
-                    break;
-                    case 2:
-                    curso = "REDES";
-                    cursoNaoEscolhido = false;
-                    break;
-                   default:
-                    MostrarMensagem ($"Esse código não existe", TipoMensagemEnum.ERRO );
-                   break;
-
-
-                }
-
-        }
     }
 }
