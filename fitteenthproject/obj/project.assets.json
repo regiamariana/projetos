@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47425337800\\Documents\\c#\\fitteenthproject\\fitteenthproject.csproj",
+      "projectUniqueName": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\fitteenthproject\\fitteenthproject.csproj",
       "projectName": "fitteenthproject",
-      "projectPath": "C:\\Users\\47425337800\\Documents\\c#\\fitteenthproject\\fitteenthproject.csproj",
+      "projectPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\fitteenthproject\\fitteenthproject.csproj",
       "packagesPath": "C:\\Users\\47425337800\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47425337800\\Documents\\c#\\fitteenthproject\\obj\\",
+      "outputPath": "C:\\Users\\47425337800\\Documents\\c#\\thirthproject\\projetos\\fitteenthproject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
